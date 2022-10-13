@@ -85,7 +85,7 @@ namespace FM.ContactBook.Server.Middleware
                 var errResponse = new ResponseBase();
                 errResponse.SetError(errorCode, errorMsg);
 
-                response.WriteAsync(errResponse.ToJsonString().ToString());
+                response.WriteAsync(errResponse.ToJsonString());
             }
             catch (Exception ex)
             {
