@@ -71,11 +71,11 @@ namespace FM.ContactBook.Server.Middleware
             {
                 errorCode = exception switch
                 {
-                    EndUserException eu => Exceptions.END_USER,
-                    ClientProgrammerException cp => Exceptions.CLIENT_PROGRAMMER,
-                    AccessDeniedException ad => Exceptions.ACCESS_DENIED,
-                    ServerException es => Exceptions.SERVER,
-                    InvalidTokenException it => Exceptions.INVALID_TOKEN,
+                    EndUserException eu => ErrorCodes.END_USER,
+                    ClientProgrammerException cp => ErrorCodes.CLIENT_PROGRAMMER,
+                    AccessDeniedException ad => ErrorCodes.ACCESS_DENIED,
+                    ServerException es => ErrorCodes.SERVER,
+                    InvalidTokenException it => ErrorCodes.INVALID_TOKEN,
                     _ => 600
                 };
 

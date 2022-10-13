@@ -1,6 +1,6 @@
 ﻿namespace FM.ContactBook.Server
 {
-    public class Exceptions
+    public class ErrorCodes
     {
         public const int END_USER = 300;
         public const int CLIENT_PROGRAMMER = 400;

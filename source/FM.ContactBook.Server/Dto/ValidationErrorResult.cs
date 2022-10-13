@@ -30,7 +30,7 @@ namespace FM.ContactBook.Server.Dto
 
             var response = new ResponseBase()
             {
-                ErrorCode = Exceptions.CLIENT_PROGRAMMER,
+                ErrorCode = ErrorCodes.CLIENT_PROGRAMMER,
                 ErrorMsg = sb.ToString(),
                 IsError = true
             };
