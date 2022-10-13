@@ -3,6 +3,7 @@ Contact book demo app
 
 Server: ASP Core Web API  
 Client: Angular 14 Web Application  
+DB: SQLite  
 
 The server can either be run as a console app or hosted as a windows service.  
 
