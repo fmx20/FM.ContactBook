@@ -1,0 +1,57 @@
+@import 'src/scss/colors';
+
+:host {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.2s;
+    width: 100%;
+    z-index: 20;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: initial;
+    }
+}
+
+.load-panel {
+    background-color: rgba($color: $color-light-1, $alpha: 0.32);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .load-panel-overlay {
+        background-color: $color-light-1;
+        border-radius: 3px;
+        box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+        height: 210px;
+        position: relative;
+        width: 210px;
+
+        .info-text {
+            left: calc(50% - 50px);
+            position: absolute;
+            top: calc(78% - 10px);
+            color: $color-dark-1;
+            text-align: center;
+            width: 100px;
+        }
+    }
+}
+
+.spinner {
+    left: calc(50% - 40px);
+    position: absolute;
+    top: calc(40% - 40px);
+    height: 80px;
+    width: 80px;
+}

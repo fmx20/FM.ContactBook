@@ -1,0 +1,14 @@
+@import 'src/scss/colors';
+
+:host {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    min-height: 40px !important;
+    padding: 0.5rem 1rem !important;
+}

@@ -1,0 +1,88 @@
+@import 'src/scss/colors';
+
+:host {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.nav-menu {
+    background-color: $color-dark-3;
+    box-sizing: border-box;
+    left: 0;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.1s;
+    width: 100%;
+    z-index: 999;
+
+    .inner-nav {
+        display: block;
+        height: 60px;
+        margin: 0 auto;
+        max-width: 1400px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .inner-nav-container {
+            box-sizing: border-box;
+            padding: 0px 16px;
+    
+            align-items: center;
+            display: flex;
+            justify-content: flex-start;
+    
+            .logo-container {
+                align-self: center;
+                margin-right: 48px;
+                user-select: none;
+    
+                align-items: center;
+                display: flex;
+                justify-content: flex-start;
+
+                .logo-img {
+                    color: $color-light-1;
+                    font-size: 32px; 
+                    margin-right: 12px;
+                }
+
+                .logo-text {
+                    align-self: center;
+                    color: #FFF;
+                    font-size: 20px;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    user-select: none;
+                }
+            }
+
+            .btns-container {
+                align-items: center;
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+.main {
+    height: calc(100% - 60px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1400px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+}

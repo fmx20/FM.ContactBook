@@ -1,0 +1,55 @@
+<div class="nav-menu">
+  <div class="inner-nav">
+    <div class="inner-nav-container">
+      <div class="logo-container">
+        <i class="pi pi-users logo-img"></i>
+        <span class="logo-text">ContactBook</span>
+      </div>
+
+      <div class="btns-container">
+        <button 
+          class="btn-text-light" 
+          routerLink="/contacts" 
+          routerLinkActive="active"
+          style="margin-left: 16px;"
+          pRipple>
+
+          <span>Kontakte</span>
+        </button>
+
+        <button 
+          class="btn-text-light" 
+          style="margin-left: 16px;"
+          pRipple>
+
+          <span>Firmen</span>
+        </button>
+
+        <button 
+          class="btn-text-light" 
+          style="margin-left: 16px;"
+          pRipple>
+
+          <span>Admin</span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="inner-nav-container" style="padding-left: 0px;">
+      <button 
+        (click)="logout()" 
+        class="btn-icon-light" 
+        style="margin-left: 20px;"
+        title="Abmelden"
+        pRipple>
+
+        <i class="pi pi-sign-out" style="color: #FFF; font-size: 16px; margin-left: 3px;"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

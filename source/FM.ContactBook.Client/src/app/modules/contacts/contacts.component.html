@@ -1,0 +1,77 @@
+<div class="sub-nav">
+  <div class="sub-nav-container">
+    <span class="sub-nav-caption">Kontakte</span>
+  </div>
+  <div class="sub-nav-container">
+    <button 
+      (click)="showNewContactDialog()"
+      pButton 
+      pRipple 
+      type="button" 
+      label="Hinzufügen" 
+      icon="pi pi-plus" 
+      class="p-button-text">
+    </button>
+
+    <button 
+      (click)="showEditContactDialog()"
+      pButton 
+      pRipple 
+      type="button" 
+      label="Bearbeiten" 
+      icon="pi pi-pencil" 
+      class="p-button-text" 
+      [disabled]="!selectedContact" 
+      style="margin-left: 8px;">
+    </button>
+
+    <button 
+      (click)="confirmDeleteContact()"
+      pButton 
+      pRipple 
+      type="button" 
+      label="Löschen" 
+      icon="pi pi-trash" 
+      class="p-button-text" 
+      [disabled]="!selectedContact" 
+      style="margin-left: 8px;">
+    </button>
+
+    <span class="p-input-icon-right" style="margin-left: 16px;">
+      <i *ngIf="filterInput.value != null && filterInput.value != ''" (click)="resetFilter()" class="pi pi-times" title="Löschen"></i>
+      <input #filterInput (input)="filterChanged($event)" type="text" placeholder="Filtern..." pInputText />
+    </span>
+  </div>
+</div>
+
+<div class="sub-container">
+  <div class="sub-inner-container">
+    <p-table 
+      #dt 
+      [columns]="cols" 
+      [value]="(contacts$ | async)!" 
+      [filterDelay]="500" 
+      [globalFilterFields]="cols" 
+      [loading]="(contactsLoading$ | async)!" 
+      [rowHover]="true" 
+      [scrollable]="true" 
+      scrollHeight="flex"
+      selectionMode="single" 
+      [(selection)]="selectedContact">
+      
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+              {{col.header}}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns" style="white-space: pre;">{{rowData[col.field] || '-'}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</div>

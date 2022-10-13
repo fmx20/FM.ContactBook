@@ -1,0 +1,82 @@
+<div class="dialog-body">
+  
+  <div class="fields-container" style="margin-bottom: 16px;">
+    <div class="p-field" style="flex: 0 0 auto; margin-right: 8px;">
+      <label for="title">Anrede</label>
+      <p-dropdown id="title" appendTo="body" [options]="['Herr', 'Frau']" [(ngModel)]="contact.title"></p-dropdown>
+    </div>
+
+    <div class="p-field" style="margin: 0 8px;">
+      <label for="forename">Vorname (Benötigt)</label>
+      <input id="forename" type="text" pInputText [(ngModel)]="contact.forename" autocomplete="off" />
+    </div>
+
+    <div class="p-field" style="margin-left: 8px;">
+      <label for="forename">Nachname (Benötigt)</label>
+      <input id="forename" type="text" pInputText [(ngModel)]="contact.surname" autocomplete="off" />
+    </div>
+  </div>
+
+  <div class="fields-container" style="margin-bottom: 16px;">
+    <div class="p-field" style="margin-right: 8px;">
+      <label for="dateOfBirth">Geburtstag</label>
+      <p-calendar id="dateOfBirth" appendTo="body" dateFormat="yy-mm-dd" [(ngModel)]="contact.birthDate" [style]="{width: '100%'}"></p-calendar>
+    </div>
+  
+    <div class="p-field" style="margin-left: 8px;">
+      <label for="phone">Telefon</label>
+      <input id="phone" type="text" pInputText [(ngModel)]="contact.phoneNumber" autocomplete="off" />
+    </div>
+  </div>
+
+  <div class="p-field" style="margin-bottom: 16px;">
+    <label for="iban">IBAN (Benötigt)</label>
+    <p-inputMask id="iban" [(ngModel)]="contact.iban" mask="aa99 9999 9999 9999 9999 99" [unmask]="true" [style]="{width: '100%'}"></p-inputMask>
+  </div>
+
+  <div class="fields-container" style="margin-bottom: 16px;"> 
+    <div class="p-field" style="margin-right: 8px;">
+      <label for="street">Straße</label>
+      <input id="street" type="text" pInputText [(ngModel)]="contact.address.street" autocomplete="off"/>
+    </div>
+
+    <div class="p-field" style="flex: 0 0 50px; margin-left: 8px;">
+      <label for="housenumber">Hausnummer</label>
+      <input id="housenumber" type="number" pInputText [(ngModel)]="contact.address.houseNumber" min="1" step="1" autocomplete="off" />
+    </div>
+  </div>
+
+  <div class="fields-container" style="margin-bottom: 16px;">
+    <div class="p-field" style="margin-right: 8px;">
+      <label for="city">Stadt</label>
+      <input id="city" type="text" pInputText [(ngModel)]="contact.address.city" autocomplete="off" />
+    </div>
+
+    <div class="p-field" style="flex: 0 0 50px; margin-left: 8px;">
+      <label for="postcode">PLZ</label>
+      <p-inputMask id="postcode" [(ngModel)]="contact.address.postCode" mask="99999" [unmask]="true"></p-inputMask>
+    </div>
+  </div>
+
+  <div class="fields-container">
+    <div class="p-field" style="margin-right: 8px;">
+      <label for="district">Bezirk</label>
+      <input id="district" type="text" pInputText [(ngModel)]="contact.address.district" autocomplete="off" />
+    </div>
+
+    <div class="p-field" style="margin-left: 8px;">
+      <label for="country">Land</label>
+      <input id="country" type="text" pInputText [(ngModel)]="contact.address.country" autocomplete="off" />
+    </div>
+  </div>
+
+</div>
+
+<div class="dialog-footer">
+  <p-button
+    (onClick)="submit()"
+    label="Speichern"
+    [disabled]="!canSave">
+
+  </p-button>
+</div>

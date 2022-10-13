@@ -1,0 +1,37 @@
+<div class="login-container" (keyup.enter)="login()">
+
+  <div class="login-header">
+    <div class="logo-container">
+      <i class="pi pi-users logo-img"></i>
+
+      <span class="logo-text">ContactBook</span>
+    </div>
+    <span class="login-caption">Willkommen zurück</span>
+    <span class="login-sub-caption">Melden Sie sich bei Ihrem Konto an</span>
+  </div>
+
+  <div class="login-body">
+
+    <span class="p-float-label" style="margin-bottom: 36px;">
+      <input id="float-input-username" type="text" pInputText [(ngModel)]="username" spellcheck="false" style="width: 100%;"> 
+      <label for="float-input-username">Benutzername</label>
+    </span>
+
+    <span class="p-float-label">
+      <input id="float-input-password" type="password" pInputText [(ngModel)]="password" spellcheck="false" style="width: 100%;"> 
+      <label for="float-input-password">Passwort</label>
+    </span>
+
+  </div>
+
+  <div class="login-footer"> 
+    <p-button 
+      (onClick)="login()" 
+      label="Anmelden" 
+      [disabled]="!username || !password || isLoading" 
+      [loading]="isLoading" 
+      [style]="{width: '150px'}">
+    </p-button>
+  </div>
+
+</div>

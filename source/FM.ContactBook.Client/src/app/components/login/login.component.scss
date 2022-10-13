@@ -1,0 +1,88 @@
+@import 'src/scss/colors';
+
+:host {
+    background-color: $color-light-2;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.login-container {
+    background-color: $color-light-1;
+    border: 1px solid $border;
+    box-sizing: border-box;
+    height: 484px;
+    left: calc(50% - 210px);
+    position: absolute;
+    top: calc(50% - 242px);
+    transition: all 0.2s;
+    width: 420px;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .login-header {
+        padding: 50px;
+        text-align: center;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .logo-container {
+            margin-bottom: 40px;
+            align-items: center;
+            display: flex;
+            justify-content: flex-start;
+
+            .logo-img {
+                color: $color-dark-1;
+                font-size: 32px; 
+                margin-right: 12px;
+            }
+
+            .logo-text {
+                color: $color-dark-1;
+                cursor: default;
+                font-size: 20px;
+                font-weight: 600;
+                user-select: none;
+            }
+        }
+
+        .login-caption {
+            color: $color-dark-1;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .login-sub-caption {
+            color: $color-dark-1;
+            font-size: 16px;
+        }
+    }
+
+    .login-body {
+        flex: 1 1 100%;
+        padding: 0px 50px 40px 50px;
+
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .login-footer {
+        flex: 0 0 auto;
+        padding: 0px 50px 40px 50px;
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
